@@ -77,12 +77,89 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
+
 # Generate models and tables, according to the domain model.
 # TODO!
+
+rails generate model Studio
+rails generate model Movie
+rails generate model Actor
+rails generate model Role
+rails db:migrate
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+warner_bros = Studio.new
+warner_bros["name"] = "Warner Bros."
+warner_bros.save
+
+puts "There are #{Studio.all.count} studios."
+
+
+
+batman_begins = Movie.new
+batman_begins["title"] = "Batman Begins"
+batman_begins["year_released"] = "2005"
+batman_begins["rated"] = "PG-13"
+batman_begins["studio_id"] = "Batman Begins"
+batman_begins.save
+
+puts "There are #{Studio.all.count} studios."
+
+
+
+
+christian_bale = Actor.new
+christian_bale["name"] = "Christian Bale"
+christian_bale.save
+
+michael_caine = Actor.new
+michael_caine["name"] = "Michael Caine"
+michael_caine.save
+
+liam_neeson = Actor.new
+liam_neeson["name"] = "Liam Neeson"
+liam_neeson.save
+
+katie_holmes = Actor.new
+katie_holmes["name"] = "Katie Holmes"
+katie_holmes.save
+
+gary_oldman = Actor.new
+gary_oldman["name"] = "Gary Oldman"
+gary_oldman.save
+
+heath_ledger = Actor.new
+heath_ledger["name"] = "Heath Ledger"
+heath_ledger.save
+
+aaron_eckhart = Actor.new
+aaron_eckhart["name"] = "Aaron Eckhart"
+aaron_eckhart.save
+
+maggie_gyllenhaal = Actor.new
+maggie_gyllenhaal["name"] = "Maggie Gyllenhaal"
+maggie_gyllenhaal.save
+
+tom_hardy = Actor.new
+tom_hardy["name"] = "Tom Hardy"
+tom_hardy.save
+
+joseph_gordon-levitt = Actor.new
+joseph_gordon-levitt["name"] = "Joseph Gordon-Levitt"
+joseph_gordon-levitt.save
+
+anne_hathaway = Actor.new
+anne_hathaway["name"] = "Anne Hathaway"
+anne_hathaway.save
+
+puts "There are #{Actor.all.count} actors."
 
 # Prints a header for the movies output
 puts "Movies"
@@ -91,6 +168,7 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
 
 # Prints a header for the cast output
 puts ""
